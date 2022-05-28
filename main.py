@@ -105,7 +105,26 @@ class Square(Rectangle):
     def toString(self):
         return "Square[Rectangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(self._width) + ", length=" + str(self._length) + "]]"
 
+class EquilateralTriangle(Rectangle):
 
+    def __init__(self, _color: str, _filled: bool, _sideLength: float = 1.0):
+        super(EquilateralTriangle, self).__init__(_color, _filled)
+        self._sideLength = _sideLength
+
+    def getSideLength(self):
+        return self._sideLength
+
+    def setSideLength(self, sideLength: float):
+        self._sideLength = sideLength
+
+    def getArea(self):
+        return (math.sqrt(3)/4) * math.pow(self._sideLength, 2)
+
+    def getPerimeter(self):
+        return self._sideLength * 3
+
+    def toString(self):
+        return "Equilateral Triangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(self._width) + ", length=" + str(self._length) + "]"
 
 cr = Square("white", False)
 cr.getArea()
