@@ -81,7 +81,8 @@ class Rectangle(Shape):
         return (self._length * 2) + (self._width * 2)
 
     def toString(self):
-        return "Rectangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(self._width) + ", length=" + str(self._length) + "]"
+        return "Rectangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(
+            self._width) + ", length=" + str(self._length) + "]"
 
 
 class Square(Rectangle):
@@ -103,7 +104,9 @@ class Square(Rectangle):
         self._side = side
 
     def toString(self):
-        return "Square[Rectangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(self._width) + ", length=" + str(self._length) + "]]"
+        return "Square[Rectangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(
+            self._width) + ", length=" + str(self._length) + "]]"
+
 
 class EquilateralTriangle(Rectangle):
 
@@ -118,14 +121,18 @@ class EquilateralTriangle(Rectangle):
         self._sideLength = sideLength
 
     def getArea(self):
-        return (math.sqrt(3)/4) * math.pow(self._sideLength, 2)
+        return (math.sqrt(3) / 4) * math.pow(self._sideLength, 2)
 
     def getPerimeter(self):
         return self._sideLength * 3
 
     def toString(self):
-        return "Equilateral Triangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(self._width) + ", length=" + str(self._length) + "]"
+        return "Equilateral Triangle[Shape[color=" + self._color + ", filled=" + str(self._filled) + "], width=" + str(
+            self._width) + ", length=" + str(self._length) + "]"
 
-cr = Square("white", False)
-cr.getArea()
-print(cr.toString())
+
+if __name__ == "__main__":
+    rctl = Rectangle("blue", False)
+    print(rctl.toString())
+    print(rctl.getArea())
+    print(rctl.getPerimeter())
